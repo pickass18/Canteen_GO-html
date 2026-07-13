@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Share your suggestions. Frequently asked questions and answers about CanteenGO." />
+    <title>Feedback & FAQs | CanteenGO</title>
+    <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <img class="logo" src="Logo.png" alt="CanteenGO Logo" height="42" width="42">
+            <span class="brand-name">CanteenGO</span>
+        </div>
+
+        <div class="header-right">
+            <nav class="navi">
+                <a href="homepage.html">Home</a>
+                <a href="food.html">Food</a>
+                <a href="drink.html">Drink</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="feedback.html" class="active">Feedback</a>
+            </nav>
+
+            
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+
+        <!-- Feedback Section Layout -->
+        <div class="feedback-grid">
+            
+            <div class="feedback-form-container">
+                <h2>Give Feedback</h2>
+                <form id="feedbackForm" onsubmit="event.preventDefault(); submitFeedbackForm();">
+                    <div class="form-group">
+                        <label for="feedbackName">Full Name</label>
+                        <input type="text" id="feedbackName" class="form-control" placeholder="E.g. Jenish Thapa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedbackRoll">Roll Number / Class</label>
+                        <input type="text" id="feedbackRoll" class="form-control" placeholder="E.g. F2512" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="feedbackComments">Your Message</label>
+                        <textarea id="feedbackComments" class="form-control" rows="4" placeholder="Share your suggestions or complaints..." required style="resize: none;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Feedback</button>
+                </form>
+            </div>
+
+            
+        </div>
+
+        
+    </main>
+<script src="homepage.js"></script>
+</body>
+</html>

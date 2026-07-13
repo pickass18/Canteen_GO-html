@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse and pre-order hot meals and bakery items from CanteenGO." />
+    <title>Food Menu | CanteenGO</title>
+    <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <img class="logo" src="Logo.png" alt="CanteenGO Logo" height="42" width="42">
+            <span class="brand-name">CanteenGO</span>
+        </div>
+
+        <div class="header-right">
+            <nav class="navi">
+                <a href="homepage.html">Home</a>
+                <a href="food.html" class="active">Food</a>
+                <a href="drink.html">Drink</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+
+       
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container">
+        <div class="section-header" style="margin-bottom: 2rem;">
+            <h1>Food Menu</h1>
+            <p>Select your favorite meal and pre-order to save time.</p>
+        </div>
+
+        <!-- Left Sidebar Categories & Main Grid Layout -->
+        <div class="menu-layout">
+            <!-- Left Sidebar -->
+            <aside class="menu-sidebar">
+                <h3>Categories</h3>
+                <div class="categories" id="foodCategories">
+                    <button class="category-btn active" onclick="filterMenu('all')">All</button>
+                    <button class="category-btn" onclick="filterMenu('momo-chowmein')">Momo & Chowmein</button>
+                    <button class="category-btn" onclick="filterMenu('burgers')">Burgers & Sides</button>
+                    <button class="category-btn" onclick="filterMenu('bakery')">Bakery</button>
+                </div>
+            </aside>
+
+            <!-- Right Main Area -->
+            <div class="menu-main">
+                <!-- Menu Cards Grid -->
+                <div class="menu-grid" id="foodGrid">
+            <!-- Food Card 1 -->
+            <div class="menu-card" data-category="momo-chowmein" data-name="Chicken Momo">
+                <div class="menu-card-img">
+                    <span class="menu-card-tag">Popular</span>
+                    <div style="background: linear-gradient(135deg, #FF6B35 0%, #FFBF69 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🥟</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Chicken Momo</h3>
+                    <p class="menu-card-desc">Delicious steamed dumplings stuffed with spiced minced chicken, served with hot tomato achar.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep"> 12 mins</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 150</span>
+                        <button class="btn btn-primary" onclick="openOrderModal('Chicken Momo', 150, )">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Card 2 -->
+            <div class="menu-card" data-category="momo-chowmein" data-name="Veg Chowmein">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🍜</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Veg Chowmein</h3>
+                    <p class="menu-card-desc">Stir-fried noodles with fresh vegetables, cabbage, carrots, onion, and signature light soy sauce.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">10 mins</span>
+                        <span class="menu-card-rating"></span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 120</span>
+                        <button class="btn btn-primary" onclick="openOrderModal('Veg Chowmein', 120, )">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Card 3 -->
+            <div class="menu-card" data-category="burgers" data-name="Crispy Chicken Burger">
+                <div class="menu-card-img">
+                    <span class="menu-card-tag">Chef Choice</span>
+                    <div style="background: linear-gradient(135deg, #FF9800 0%, #FFEB3B 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🍔</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Crispy Chicken Burger</h3>
+                    <p class="menu-card-desc">Crispy golden chicken patty served with creamy mayonnaise, lettuce, and warm toasted sesame buns.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ 15 mins</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 180</span>
+                        <button class="btn btn-primary" onclick="openOrderModal('Crispy Chicken Burger', 180, '🍔')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Card 4 -->
+            <div class="menu-card" data-category="burgers" data-name="French Fries">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #FFC107 0%, #FFE082 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🍟</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">French Fries</h3>
+                    <p class="menu-card-desc">Perfectly salted crispy golden potato fries, served hot with tangy tomato ketchup.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ 8 mins</span>
+                        <span class="menu-card-rating">★ 4.6</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 100</span>
+                        <button class="btn btn-primary" onclick="openOrderModal('French Fries', 100, '🍟')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Card 5 -->
+            <div class="menu-card" data-category="bakery" data-name="Chocolate Muffin">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #795548 0%, #A1887F 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🧁</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Chocolate Muffin</h3>
+                    <p class="menu-card-desc">Soft, moist, baked chocolate muffin loaded with semi-sweet chocolate chips throughout.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ Ready</span>
+                        <span class="menu-card-rating">★ 4.7</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 80</span>
+                        <button class="btn btn-primary" onclick="openOrderModal('Chocolate Muffin', 80, '🧁')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Card 6 -->
+            <div class="menu-card" data-category="bakery" data-name="Paneer Patties">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #E65100 0%, #FFB74D 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🥐</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Paneer Patties</h3>
+                    <p class="menu-card-desc">Flaky puffed pastry shell stuffed with creamy seasoned paneer mash and spices.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ Ready</span>
+                        <span class="menu-card-rating">★ 4.4</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 60</span>
+                        <button class="btn btn-primary" onclick="openOrderModal('Paneer Patties', 60, '🥐')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> <!-- Close menu-main -->
+        </div> <!-- Close menu-layout -->
+    </main>
+
+    <!-- Ordering Food Modal (Tailored from wireframes) -->
+    <div class="overlay" id="orderModal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeOrderModal()">&times;</button>
+            <h2 id="orderModalTitle">Confirm Food Order</h2>
+            
+            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; background-color: var(--light); padding: 1rem; border-radius: var(--radius-sm);">
+                <div id="orderItemIcon" style="font-size: 2.2rem;">🍔</div>
+                <div>
+                    <h3 id="orderItemName" style="font-size: 1.25rem;">Chicken Burger</h3>
+                    <p id="orderItemBasePrice" style="color: var(--primary); font-weight: 700;">Rs. 180</p>
+                </div>
+            </div>
+
+            <form id="orderForm" onsubmit="event.preventDefault(); submitOrder();">
+                <!-- Quantity -->
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <div class="quantity-control">
+                        <button type="button" class="qty-btn" onclick="updateQty(-1)">−</button>
+                        <span class="qty-val" id="orderQty">1</span>
+                        <button type="button" class="qty-btn" onclick="updateQty(1)">+</button>
+                    </div>
+                </div>
+
+                <!-- Add-ons (Food Specific) -->
+                <div class="form-group">
+                    <label>Customize Your Meal (Add-ons)</label>
+                    <div class="options-grid">
+                        <div class="option-select" id="addon-cheese" onclick="toggleAddon('cheese', 30)">Extra Cheese (+Rs. 30)</div>
+                        <div class="option-select" id="addon-spicy" onclick="toggleAddon('spicy', 10)">Extra Spicy (+Rs. 10)</div>
+                        <div class="option-select" id="addon-sauce" onclick="toggleAddon('sauce', 15)">Mayo Dip (+Rs. 15)</div>
+                    </div>
+                </div>
+
+                <!-- Remarks -->
+                <div class="form-group">
+                    <label for="orderRemarks">Special Instructions</label>
+                    <input type="text" id="orderRemarks" class="form-control" placeholder="E.g. No cabbage, extra ketchup">
+                </div>
+
+                <!-- Payment Method (Matching wireframe) -->
+                <div class="form-group">
+                    <label>Payment Mode</label>
+                    <div class="options-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="option-select active" id="pay-cash" onclick="setPayment('cash')">Cash</div>
+                        <div class="option-select" id="pay-esewa" onclick="setPayment('esewa')">eSewa</div>
+                        <div class="option-select" id="pay-card" onclick="setPayment('card')">Card</div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="order-summary">
+                    <span class="order-summary-title">Total Estimated Amount</span>
+                    <span class="order-summary-price" id="orderTotalPrice">Rs. 180</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Place Pre-Order</button>
+            </form>
+        </div>
+    </div>
+
+   
+
+   
+    <script src="homepage.js"></script>
+</body>
+</html>

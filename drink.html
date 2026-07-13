@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quench your thirst. Browse hot coffees, chilled tea, smoothies, and juices on CanteenGO." />
+    <title>Drink Menu | CanteenGO</title>
+    <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <img class="logo" src="Logo.png" alt="CanteenGO Logo" height="42" width="42">
+            <span class="brand-name">CanteenGO</span>
+        </div>
+
+        <div class="header-right">
+            <nav class="navi">
+                <a href="homepage.html">Home</a>
+                <a href="food.html">Food</a>
+                <a href="drink.html" class="active">Drink</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+
+    
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container">
+        <div class="section-header" style="margin-bottom: 2rem;">
+            <h1 id="Dinks">Drink Menu</h1>
+            <p>Select your favorite drink and customize it just how you like it.</p>
+        </div>
+
+        <!-- Left Sidebar Categories & Main Grid Layout -->
+        <div class="menu-layout">
+            <!-- Left Sidebar -->
+            <aside class="menu-sidebar">
+                <h3>Categories</h3>
+                <div class="categories" id="drinkCategories">
+                    <a href="#Dinks">Hot Brews</a>
+                    <a href="#Icespice">Chilled Drinks</a>
+                    <a href="#suiii">Juices and smoothie</a>
+                    <!-- <button class="category-btn active" onclick="filterMenu('all')">All</button>
+                    <button class="category-btn" onclick="filterMenu('hot')">Hot Brews</button>
+                    <button class="category-btn" onclick="filterMenu('cold')">Chilled Drinks</button>
+                    <button class="category-btn" onclick="filterMenu('juices')">Juices & Smoothies</button> -->
+                </div>
+            </aside>
+
+            <!-- Right Main Area -->
+            <div class="menu-main">
+                <!-- Menu Cards Grid -->
+                <div class="menu-grid" id="drinkGrid">
+            <!-- Drink Card 1 -->
+            <div class="menu-card" data-category="hot" data-name="Cafe Latte">
+                <div class="menu-card-img">
+                    <span class="menu-card-tag">Popular</span>
+                    <div style="background: linear-gradient(135deg, #A1887F 0%, #D7CCC8 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">☕</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Cafe Latte</h3>
+                    <p class="menu-card-desc">Freshly pulled espresso shot with steamed milk and a thin layer of velvety micro-foam.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ 5 mins</span>
+                        <span class="menu-card-rating">★ 4.8</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 100</span>
+                        <button class="btn btn-primary" onclick="openDrinkOrderModal('Cafe Latte', 100, '☕')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink Card 2 -->
+            <div class="menu-card" data-category="hot" data-name="Milk Tea">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #D7CCC8 0%, #FFE0B2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🍵</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Milk Tea</h3>
+                    <p class="menu-card-desc">Traditional Nepalese CTC milk tea brewed with cardamom, ginger, and fresh milk.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ 3 mins</span>
+                        <span class="menu-card-rating">★ 4.9</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 30</span>
+                        <button class="btn btn-primary" onclick="openDrinkOrderModal('Milk Tea', 30, '🍵')">Order Now</button>
+                    </div>
+                </div>
+            </div >
+
+            <!-- Drink Card 3 -->
+            <div id="Icespice"   class="menu-card" data-category="cold" data-name="Lemon Iced Tea">
+                <div class="menu-card-img">
+                    <span class="menu-card-tag">Refreshing</span>
+                    <div style="background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🍹</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Lemon Iced Tea</h3>
+                    <p class="menu-card-desc">Chilled black tea infused with fresh lemon juice, mint leaves, served cold over ice.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ 4 mins</span>
+                        <span class="menu-card-rating">★ 4.6</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 80</span>
+                        <button class="btn btn-primary" onclick="openDrinkOrderModal('Lemon Iced Tea', 80, '🍹')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink Card 4 -->
+            <div class="menu-card" data-category="cold" data-name="Coca Cola">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #EF5350 0%, #B71C1C 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🥤</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Coca Cola</h3>
+                    <p class="menu-card-desc">Chilled carbonated soft drink. Perfect refreshment on a hot afternoon.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ Ready</span>
+                        <span class="menu-card-rating">★ 4.3</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 60</span>
+                        <button class="btn btn-primary" onclick="openDrinkOrderModal('Coca Cola', 60, '🥤')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink Card 5 -->
+            <div id="suiii"   class="menu-card" data-category="juices" data-name="Mango Smoothie">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #FFE082 0%, #FFB300 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🥭</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Mango Smoothie</h3>
+                    <p class="menu-card-desc">Thick, creamy smoothie blended with sweet ripe mangoes, fresh yogurt, and honey.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ 8 mins</span>
+                        <span class="menu-card-rating">★ 4.7</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 120</span>
+                        <button class="btn btn-primary" onclick="openDrinkOrderModal('Mango Smoothie', 120, '🥭')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drink Card 6 -->
+            <div class="menu-card" data-category="juices" data-name="Orange Juice">
+                <div class="menu-card-img">
+                    <div style="background: linear-gradient(135deg, #FFCC80 0%, #EF6C00 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">🍊</div>
+                </div>
+                <div class="menu-card-content">
+                    <h3 class="menu-card-title">Orange Juice</h3>
+                    <p class="menu-card-desc">100% freshly squeezed seasonal oranges, served cold with ice. Rich in Vitamin C.</p>
+                    <div class="menu-card-meta">
+                        <span class="menu-card-prep">⏱️ 6 mins</span>
+                        <span class="menu-card-rating">★ 4.5</span>
+                    </div>
+                    <div class="menu-card-footer">
+                        <span class="menu-card-price">Rs. 90</span>
+                        <button class="btn btn-primary" onclick="openDrinkOrderModal('Orange Juice', 90, '🍊')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> <!-- Close menu-main -->
+        </div> <!-- Close menu-layout -->
+    </main>
+
+    <!-- Ordering Drink Modal (Tailored from wireframes) -->
+    <div class="overlay" id="drinkOrderModal">
+        <div class="modal-box">
+            <button class="close-btn" onclick="closeDrinkOrderModal()">&times;</button>
+            <h2 id="drinkOrderModalTitle">Confirm Drink Order</h2>
+            
+            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; background-color: var(--light); padding: 1rem; border-radius: var(--radius-sm);">
+                <div id="drinkOrderItemIcon" style="font-size: 2.2rem;">☕</div>
+                <div>
+                    <h3 id="drinkOrderItemName" style="font-size: 1.25rem;">Cafe Latte</h3>
+                    <p id="drinkOrderItemBasePrice" style="color: var(--primary); font-weight: 700;">Rs. 100</p>
+                </div>
+            </div>
+
+            <form id="drinkOrderForm" onsubmit="event.preventDefault(); submitDrinkOrder();">
+                <!-- Quantity -->
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <div class="quantity-control">
+                        <button type="button" class="qty-btn" onclick="updateDrinkQty(-1)">−</button>
+                        <span class="qty-val" id="drinkOrderQty">1</span>
+                        <button type="button" class="qty-btn" onclick="updateDrinkQty(1)">+</button>
+                    </div>
+                </div>
+
+                <!-- Size Selector (Drink Specific) -->
+                <div class="form-group">
+                    <label>Choose Size</label>
+                    <div class="options-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="option-select active" id="size-regular" onclick="setDrinkSize('regular', 0)">Regular (+Rs. 0)</div>
+                        <div class="option-select" id="size-large" onclick="setDrinkSize('large', 30)">Large (+Rs. 30)</div>
+                    </div>
+                </div>
+
+                <!-- Sweetness Level (Drink Specific) -->
+                <div class="form-group">
+                    <label>Sweetness Level</label>
+                    <div class="options-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="option-select" id="sweet-0" onclick="setDrinkSweetness('0')">0% (None)</div>
+                        <div class="option-select active" id="sweet-50" onclick="setDrinkSweetness('50')">50% (Less)</div>
+                        <div class="option-select" id="sweet-100" onclick="setDrinkSweetness('100')">100% (Normal)</div>
+                    </div>
+                </div>
+
+                <!-- Remarks -->
+                <div class="form-group">
+                    <label for="drinkOrderRemarks">Special Instructions</label>
+                    <input type="text" id="drinkOrderRemarks" class="form-control" placeholder="E.g. Extra hot, no ice, whip cream">
+                </div>
+
+                <!-- Payment Method (Matching wireframe) -->
+                <div class="form-group">
+                    <label>Payment Mode</label>
+                    <div class="options-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="option-select active" id="drink-pay-cash" onclick="setDrinkPayment('cash')">Cash</div>
+                        <div class="option-select" id="drink-pay-esewa" onclick="setDrinkPayment('esewa')">eSewa</div>
+                        <div class="option-select" id="drink-pay-card" onclick="setDrinkPayment('card')">Card</div>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <div class="order-summary">
+                    <span class="order-summary-title">Total Estimated Amount</span>
+                    <span class="order-summary-price" id="drinkOrderTotalPrice">Rs. 100</span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Place Pre-Order</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+
+    <script src="homepage.js"></script>
+</body>
+</html>

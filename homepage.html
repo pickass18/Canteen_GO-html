@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CanteenGO - Pre-order food and drinks from your college canteen with zero wait times. Fast, fresh, and hassle-free." />
+    <title>CanteenGO | Your Canteen on the Move</title>
+    <link rel="stylesheet" href="homepage.css" />
+</head>
+<body>
+
+    <!-- Dynamic Header -->
+    <header>
+        <div class="brand">
+            <img class="logo" src="Logo.png" alt="CanteenGO Logo" height="42" width="42">
+            <span class="brand-name">CanteenGO</span>
+        </div>
+
+        <div class="header-right">
+            <nav class="navi">
+                <a href="homepage.html" class="active">Home</a>
+                <a href="food.html">Food</a>
+                <a href="drink.html">Drink</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="openLogin" class="btn btn-outline">Getting started</button>
+            </div>
+        </div>
+    </header>
+    <div class="motto">
+        <h1>Your Canteen on the Move.</h1>
+        <button id="mottoSignIn" class="btn btn-primary">Getting started</button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="container hero">
+            <div class="hero-content">
+               
+                <p>Hungry? Let’s get you moving. Pre-order your favorite meals, customize your drinks, and pick them up with zero hassle or long queues.</p>
+
+            </div>
+            <div class="hero-image">
+                <img src="customer.png" alt="Happy Student ordering food on CanteenGO" id="heroImage">
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Shared Login/Signup Modal Overlay -->
+    <div class="overlay" id="loginOverlay">
+        
+        
+        <div class="modal-box">
+            <button class="close-btn" id="closeLogin">&times;</button>
+                        
+                           <div class="imager"><img src="Logo.png" alt="logo" height="100px" width="100px">
+
+            
+                            <h2 id="modalTitle">Welcome to Canteen Go</h2></div>
+            
+            
+            <form id="authForm" onsubmit="event.preventDefault(); handleAuthSubmit();">
+                <div class="form-group">
+                    <label for="authUsername">Username / Email</label>
+                    <input type="text" id="authUsername" class="form-control" placeholder="Enter your username" required>
+                </div>
+                
+                <div class="form-group" id="emailGroup" style="display: none;">
+                    <label for="authEmail">Email Address</label>
+                    <input type="email" id="authEmail" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="authPassword">Password</label>
+                    <input type="password" id="authPassword" class="form-control" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" id="authSubmitBtn" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Sign In</button>
+            </form>
+
+           
+        </div>
+    </div>
+    <div class="lowfeedback">
+        <a href="feedback.html">FeedBack</a>
+    </div>
+    <div class="toast-container" id="toastContainer"></div>
+ <script src="homepage.js"></script>
+</body>
+</html>
